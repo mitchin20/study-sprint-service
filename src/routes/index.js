@@ -4,6 +4,7 @@ const { categoriesListController } = require("../controllers/categoriesListContr
 const { filterListController } = require('../controllers/filterListController');
 const { createFlashcardController } = require('../controllers/createFlashcardController');
 const { updateFlashcardController } = require('../controllers/updateFlashcardController');
+const { deleteFlashcardController } = require('../controllers/deleteFlashcardController');
 
 router.get('/flashcardCategories', categoriesListController);
 router.get('/filterByCategories', filterListController);
@@ -11,5 +12,7 @@ router.get('/filterByCategories', filterListController);
 router.post('/createFlashcard', createFlashcardController);
 
 router.put('/updateFlashcard/:flashcardId', updateFlashcardController);
+
+router.delete('/deleteFlashcard/:flashcardId', deleteFlashcardController)
 
 module.exports = router;
