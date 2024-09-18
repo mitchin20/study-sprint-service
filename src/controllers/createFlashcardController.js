@@ -15,7 +15,7 @@ const createFlashcardController = async (req, res) => {
     try {
         const body = req.body;
 
-        await schema.validateSync(body);
+        schema.validateSync(body);
 
         const result = await createFlashcard(body);
 
