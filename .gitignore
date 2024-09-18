@@ -1,0 +1,35 @@
+# Node.js dependencies
+node_modules/
+
+# Environment variable files
+.env
+.env.local
+.env.*.local
+./customer/.env
+./products/.env
+./shopping/.env
+
+# Docker files
+docker-compose.yml
+docker-compose.override.yml
+docker-compose.prod.yml
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Debugging files
+.idea/
+.vscode/
+*.swp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist/
+build/
