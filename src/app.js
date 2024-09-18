@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
 const express = require('express');
+const routes = require('./routes')
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -36,13 +37,19 @@ app.use(limiter);
 //     next();
 // });
 
+// Middleware to parse JSON request
+app.use(express.json());
+
 // Health check
 app.get('/health', (req, res) => {
     res.send('Application is healthy');
 });
 
+// Routes
+app.use('/api', routes);
+
 // Root route
-app.get('/', (req, res) => {
+app.use('/', (req, res) => {
     res.send('Study Sprint is running...');
 });
 

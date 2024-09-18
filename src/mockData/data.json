@@ -1,0 +1,68 @@
+{
+    "flashcards": [
+        {
+            "category": "Network Security",
+            "multiAnswer": false,
+            "question": "Which would be the best example of an external threat to a network?",
+            "answers": [
+                "Employees discussing sensitive information in the workplace",
+                "Disgruntled employee",
+                "An employee with an active account after being fired",
+                "Hacker"
+            ],
+            "correctAnswer": "Hacker",
+            "definition": "This is the best example of an external threat. A hacker is someone outside the organization attempting to gain unauthorized access to the network or its resources"
+        },
+        {
+            "category": "Network Security",
+            "multiAnswer": false,
+            "question": "You are a network administrator looking to implement security using the CIA model. You want to ensure that all data saved to your servers remains consistent from source to destination. Which topic of the CIA model are you following?",
+            "answers": [
+              "Reliability",
+              "Availability",
+              "Confidentiality",
+              "Integrity"
+            ],
+            "correctAnswer": "Integrity",
+            "definition": "Ensures that data remains accurate, consistent, and unaltered from source to destination."
+        },
+        {
+            "category": "Network Troubleshooting",
+            "multiAnswer": false,
+            "question": "Using the following output from nslookup, What is the IP of the machine’s DNS server?\n\nC:\\> nslookup www.totalsem.com\nServer: Unknown\nAddress: 192.168.5.11\n\nNon-authoritative answer:\nName: www.totalsem.com\nAddress: 209.29.33.25",
+            "answers": [
+              "209.29.33.25",
+              "192.168.5.11",
+              "Not enough information given"
+            ],
+            "correctAnswer": "192.168.5.11",
+            "definition": "The IP of the DNS server for this machine is 192.168.5.11."
+        },
+        {
+            "category": "Network Troubleshooting",
+            "multiAnswer": false,
+            "question": "A network technician is troubleshooting a wireless network. He has identified high ping times across the units. What is another name for this problem?",
+            "answers": [
+              "Crosstalk",
+              "Latency",
+              "Attenuation",
+              "Frequency hopping"
+            ],
+            "correctAnswer": "Latency",
+            "definition": "Latency refers to the delay between a user's action and the response by the network. In networking, high latency means there is a significant delay in data transmission. This is often measured using ping times; a higher ping time indicates higher latency. In a wireless network, high latency can be caused by various factors, including interference, network congestion, or signal strength issues."
+        },
+        {
+            "category": "Networking Operation",
+            "multiAnswer": false,
+            "question": "In the event that DHCP is unavailable or unable to pass out an IP address, what is the DHCP failover mechanism?",
+            "answers": [
+              "APIPA",
+              "Reservations",
+              "Inactive lease",
+              "Active lease"
+            ],
+            "correctAnswer": "APIPA",
+            "definition": "APIPA is a feature in Windows-based operating systems (and supported by some others) that allows a device to automatically assign itself an IP address from the range 169.254.0.1 to 169.254.255.254 when DHCP server is unavailable and it cannot obtain an IP address through the normal DHCP process. This allows devices on the same local network to communicate with each other but not beyond the local network or to the internet."
+        }          
+    ]
+}
