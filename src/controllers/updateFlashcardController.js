@@ -18,14 +18,14 @@ const updateFlashcardController = async (req, res) => {
         const body = req.body;
 
         if (!flashcardId) {
-            return res.status(500).json({
+            return res.status(400).json({
                 success: false,
                 data: null,
-                error: "Missing flashcard ID",
+                error: "Bad Request: Missing flashcard ID",
                 message: "Failed to update record"
             })
         }
-        schema.validateSync(body);
+        await schema.validateSync(body);
 
         const existingRecord = await getFlashcardById(flashcardId);
         if (!existingRecord) {
@@ -54,6 +54,16 @@ const updateFlashcardController = async (req, res) => {
             message: "Successfully updated record"
         })
     } catch (error) {
+        // Specific error handling for validation errors
+        if (error.name === 'ValidationError') {
+            return res.status(400).json({
+                success: false,
+                data: null,
+                error: error.errors, // Validation errors
+                message: "Validation failed"
+            });
+        }
+        
         logger.error(error);
         res.status(500).json({
             success: false,
