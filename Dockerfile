@@ -14,8 +14,8 @@ WORKDIR /app
 COPY package*.json ./
 
 # Conditionally install dependencies based on the environment
-# Install all dependencies (dev + prod) if NODE_ENV is 'development' or 'staging'
-RUN if [ "$NODE_ENV" = "development" ] || [ "$NODE_ENV" = "staging" ]; then \
+# Install all dependencies (dev + prod) if NODE_ENV is 'development' or 'preview'
+RUN if [ "$NODE_ENV" = "development" ] || [ "$NODE_ENV" = "preview" ]; then \
       npm install; \
     else \
       npm ci --only=production; \
@@ -24,8 +24,8 @@ RUN if [ "$NODE_ENV" = "development" ] || [ "$NODE_ENV" = "staging" ]; then \
 # Copy the rest of the application code to the container
 COPY . .
 
-# Conditionally run build command if necessary for development or staging
-RUN if [ "$NODE_ENV" = "development" ] || [ "$NODE_ENV" = "staging" ]; then \
+# Conditionally run build command if necessary for development or preview
+RUN if [ "$NODE_ENV" = "development" ] || [ "$NODE_ENV" = "preview" ]; then \
       npm run build; \
     fi
 
