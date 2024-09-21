@@ -32,5 +32,10 @@ RUN if [ "$NODE_ENV" = "development" ] || [ "$NODE_ENV" = "preview" ]; then \
 # Expose the application port (3000)
 EXPOSE 3000
 
-# Start the application using node
-CMD ["node", "src/app.js"]
+# Start using application using nodemon in development or node in production
+CMD find /app -name '*.*-audit.json' -delete && \
+    if [ "$NODE_ENV" = "development" ] || [ "$NODE_ENV" = "preview" ]; then \
+      npm run dev; \
+    else \
+      npm start; \
+    fi

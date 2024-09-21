@@ -20,7 +20,8 @@ logs/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-logs*.audit.json
+*.*_audit.json
+*.*-audit.json
 
 # Debugging files
 .idea/
