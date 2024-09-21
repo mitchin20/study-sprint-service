@@ -6,7 +6,9 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
 const express = require('express');
-const routes = require('./routes')
+const authRoutes = require('./routes');
+const publicRoutes = require('./publicRoutes');
+const authMiddleware = require('./middlewares/authMiddleware');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -45,8 +47,11 @@ app.get('/health', (req, res) => {
     res.send('Application is healthy');
 });
 
-// Routes
-app.use('/api', routes);
+// Public routes
+app.use('/public', publicRoutes);
+
+// Authentication Routes
+app.use('/api', authMiddleware, authRoutes);
 
 // Root route
 app.use('/', (req, res) => {

@@ -11,6 +11,7 @@ router.get('/flashcardCategories', categoriesListController);
 // from .json file
 router.get('/filterByCategories', filterListController);
 // from database
+router.get('/flashcardCategories', categoriesListController);
 router.get('/filterFlashcard', filterFlashcardController)
 
 router.post('/createFlashcard', createFlashcardController);
