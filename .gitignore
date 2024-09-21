@@ -11,7 +11,7 @@ node_modules/
 
 # Docker files
 docker-compose.yml
-docker-compose.override.yml
+docker-compose.preview.yml
 docker-compose.prod.yml
 
 # Logs
